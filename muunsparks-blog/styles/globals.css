@@ -1,0 +1,269 @@
+@import "https://fonts.googleapis.com/css?family=Press%20Start%202P";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Typography */
+h1 {
+  @apply font-bold text-primary;
+  text-align: center;
+  color:rgb(255, 255, 255);
+  font-size:4rem;
+  font-family: "Oswald", Georgia, 'Times New Roman', Times, serif;;
+}
+
+h2 {
+  @apply text-2xl font-bold text-primary;
+}
+
+h3 {
+  @apply text-xl font-semibold text-primary;
+}
+
+p {
+  @apply text-lg leading-relaxed;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1rem;
+  color: black;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+a {
+  @apply text-blue-500 hover:underline transition duration-200;
+}
+
+/* Button Styles */
+.btn {
+  @apply bg-primary text-white px-4 py-2 shadow-lg hover:bg-blue-600 transition duration-300;
+  justify-self: center;
+}
+
+/* Utility Classes */
+.container {
+  @apply mx-auto px-4;
+}
+
+.card {
+  @apply bg-secondary text-primary p-6 rounded-lg shadow-md;
+
+}
+
+/* Navbar */
+.navbar {
+  @apply bg-secondary text-primary p-4 border-b border-gray-700;
+}
+
+.navbar a {
+  @apply hover:text-gray-400 transition duration-200;
+}
+
+/* Footer */
+.footer {
+  @apply bg-secondary text-gray-400 p-4 text-center;
+}
+
+/* Removed Circular Dependency */
+.grid {
+  /* Instead of @apply grid, we define an empty class */
+}
+
+/* Body and Background */
+body {
+  @apply text-white font-sans;
+  height: 100%;
+  background: linear-gradient(180deg, #3C6862, #529f9a);
+  width: 100%;
+  margin: 0;
+  position: relative; /* Ensure child pseudo-elements align properly */
+}
+
+/* Overlaying a subtle noise texture */
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background-image: url('../images/noise.jpg'); /* Your noise texture */
+  background-size:auto;
+  background-repeat: repeat;
+  background-position: center;
+  pointer-events: none;
+  z-index: -1; /* Ensure it's behind the content */
+  opacity: 0.15; /* Keep the opacity low for a subtle effect */
+}
+
+#__next {
+  height: 100%; /* Make sure Next.js container takes full height */
+  margin: 0;
+  width: 100%;
+}
+
+.main_container {
+  height: 100vh; /* Ensure main container fills the full height of the screen */
+  display: flex;
+}
+.lg-wrapper{
+  width: 100%;
+  height: 150px;
+}
+.logo-rounded {
+  margin-top: 10px;
+  justify-self: center;
+  border-radius: 10px;
+  width: 7rem;
+  height: 7rem;
+  transition: width 0.3s ease, height 0.3s , box-shadow 0.3s ease;
+  position:static;
+}
+
+.logo-rounded:hover {
+  width: 125px;
+  height: 125px;
+  box-shadow: 15px 15px #c7c5c5;
+}
+
+.nav-bg{
+  background: rgb(2,0,36);
+  background: linear-gradient(in oklab, rgb(18, 78, 102) 0%, rgb(11, 45, 59) 100%);
+  border-right: 1px solid rgb(0, 0, 0);
+  border-radius: 1px;
+  height: 100%;
+}
+
+.navlink{
+  color: aliceblue;
+  padding: 15px; /* Reduced padding */
+  margin: 0.5rem 0; /* Small margin between links */
+  font-size: 18px; /* Adjust font size */
+  font-family: 'Press Start 2P';
+  transition: font-size 0.3s ease, background-color 0.3s ease, color 1s ease, text-decoration 1s ease;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.navlink:hover{
+  color:rgb(0, 0, 0);
+  background-color:rgb(210, 210, 210) ;
+  text-decoration:none;
+}
+.support{
+  color: aliceblue;
+  padding: 20px;
+  margin-top: 5rem;
+  font-size: 20px;
+  font-family: 'Press Start 2P';
+  transition: font-size 0.3s ease, background-color 0.3s ease, color 1s ease, text-decoration 1s ease;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  background-color: rgb(194, 56, 56);
+}
+.support:hover{
+  color:rgb(0, 0, 0);
+  background-color:rgb(84, 218, 90) ;
+  text-decoration:none;
+}
+
+.st-title{
+  text-align: center;
+  color:rgb(33, 42, 49);
+  font-size: 3rem;
+  font-family: "Oswald", Georgia, 'Times New Roman', Times, serif;
+}
+
+.page-content{
+  width: 100%;
+  align-items: center;
+}
+
+.input-field{
+  color: black;
+  border-radius: 3px;
+}
+
+.load-bg{
+  background:rgb(18, 78, 102);
+}
+
+/* Adding a smooth transition for opacity */
+.transition-opacity {
+  transition: opacity 1s ease-in-out;
+}
+
+.blog-card{
+    background-color: rgb(240, 241, 241);
+    max-width: 650px;
+    border-radius: 24px;
+    box-shadow: 24px 24px 80px rgba(0,0,0,0.1);
+    padding: 10px 10px 28px 20px;
+    box-sizing: border-box;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: all 200ms ease-in-out;
+    box-shadow: 0.5rem 0.5rem 0.5rem rgb(0, 0, 0);
+}
+
+.blog-card:hover{
+  
+  box-shadow: 1.5rem 1.5rem 1.5rem rgb(0, 0, 0);
+}
+
+.main-app{
+  width: 100%;
+  height: 100%;
+}
+
+.button-div{
+  align-items: center;
+  width:min-content
+}
+
+.button-wrapper{
+  background-color: rgb(18, 78, 102);
+  border-radius: 30px;
+  height: min-content;
+  width: min-content;
+  transition: all ease-in-out 300ms;
+}
+
+
+@media (max-width: 800px) {
+  .nav-menu-button{
+    width: 4rem;
+    height: 4rem;
+    display:inline-block;
+    position: relative;
+  }
+  .nav-bg{
+    height: auto;
+    background-repeat: no-repeat;
+  }
+  .nav-div{
+    height:100vh;
+  }
+  .main_container{
+    display: block;
+  }
+}
+
+
+@media (min-width : 800px){
+.nav-menu-button{
+  display: none;
+}
+.button-wrapper{
+  display: none;
+}
+.nav-div{
+  height:100vh;
+}
+}
+
+.page-def{
+  flex-direction:row; /* Default: Aligns items horizontally */
+}
